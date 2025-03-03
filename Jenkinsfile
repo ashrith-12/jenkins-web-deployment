@@ -20,7 +20,7 @@ pipeline {
 
         stage('Push to Docker Hub') {
             steps {
-                withDockerRegistry([credentialsId: 'ashrithkumar1998', url: 'https://index.docker.io/v1/']) {
+                withDockerRegistry([credentialsId: 'github-token', url: 'https://index.docker.io/v1/']) {
                     sh 'docker push $DOCKER_IMAGE'
                 }
             }
